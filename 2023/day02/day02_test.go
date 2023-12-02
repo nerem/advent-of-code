@@ -45,5 +45,5 @@ func TestGetLowestPossibleConfiguration(t *testing.T) {
 }
 
 func TestGetPower(t *testing.T) {
-	assert.Equal(t, 48, getPower(configuration{4, 2, 6}))
+	assert.Equal(t, 48, getConfigurationPower(configuration{4, 2, 6}))
 }
