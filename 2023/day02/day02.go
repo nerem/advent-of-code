@@ -7,6 +7,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	utils "github.com/nerem/advent-of-code"
 )
 
 type configuration struct {
@@ -42,10 +44,10 @@ func main() {
 		game++
 	}
 
-	sumOfPossibleGames := sum(possibleGames)
+	sumOfPossibleGames := utils.Sum(possibleGames)
 	fmt.Printf("sum of possible games with given configuration: %v\n", sumOfPossibleGames)
 
-	sumOfConfigurationPowers := sum(configurationPowers)
+	sumOfConfigurationPowers := utils.Sum(configurationPowers)
 	fmt.Printf("sum of power of minimal configurations: %v\n", sumOfConfigurationPowers)
 }
 
@@ -116,13 +118,4 @@ func getLowestPossibleConfiguration(gameInput string) configuration {
 
 func getPower(config configuration) int {
 	return config.red * config.green * config.blue
-}
-
-func sum(arr []int) int {
-	sum := 0
-	for _, v := range arr {
-		sum += v
-	}
-
-	return sum
 }
